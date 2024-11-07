@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet&Net | Nunca sótano, siempre terraza</title>
     <link rel="stylesheet" href="css/styles.css">
-
 </head>
 <body>
 
 <div class="container">
-
     <!-- Home Page -->
     <section class="banner" id="home">
         <img src="img/logo.png" alt="Event Logo">
@@ -24,13 +22,39 @@
         <h2>¡¡¡Sorteo de Evento!!!</h2>
         <input type="text" id="participant-name" placeholder="Agrega el nombre del invitado">
         <button class="btn" onclick="addParticipant()">Agregar un participante</button>
+        
+        <!-- Input para importar desde Excel -->
+        <input type="file" id="import-excel" accept=".xlsx" onchange="importParticipantsFromExcel(event)">
+        
+        <!-- Lista de participantes -->
         <ul id="draw-list"></ul>
-        <button class="btn" onclick="pickWinner()">Elegir un Ganador</button>
-        <p class="draw-winner" id="winner"></p>
-    </section>
+        
+        <!-- Botón para borrar lista de participantes -->
+        <button class="btn" onclick="clearParticipants()">Borrar Lista de Participantes</button>
 
+        <!-- Cargar premios -->
+        <h3>Premios:</h3>
+        <input type="text" id="prize-name" placeholder="Agregar un premio">
+        <button class="btn" onclick="addPrize()">Agregar Premio</button>
+        <ul id="prize-list"></ul>
+
+        <!-- Botón para resetear premios -->
+        <button class="btn" onclick="resetPrizes()">Resetear Premios</button>
+
+        <!-- Botones de sorteo y siguiente premio -->
+        <button class="btn" onclick="pickWinner()">Elegir un Ganador</button>
+        <button class="btn" onclick="nextPrize()">Siguiente Premio</button>
+        
+        <!-- Mensaje de ganador -->
+        <p class="draw-winner" id="winner"></p>
+
+        <!-- Historial de ganadores -->
+        <h3>Ganadores:</h3>
+        <ul id="winners-list"></ul>
+    </section>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>
