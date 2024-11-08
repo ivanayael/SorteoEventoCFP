@@ -12,9 +12,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
     margin: 10px 0;
+    padding: 10px;
 }
 
 .container {
@@ -48,10 +49,7 @@ h1, h2 {
     margin: 5px 0; /* Unifica el margen para los botones */
 }
 
-.btn_eliminar {
-    background-color: #a04a4e;
-    margin-left: 100px;
-}
+
 
 /* Section styles */
 section {
@@ -63,20 +61,63 @@ section {
     margin: 10px 0;
 }
 
-/* Draw list items */
 #draw-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
     padding: 10px;
     background-color: #6b21a8;
     margin: 10px auto;
     border-radius: 5px;
     max-width: 500px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: #fff;
 }
+
+.btn_eliminar {
+    margin-left: 10px; /* Añade espacio entre el texto del premio y el botón */
+    background-color: #ff4c4c; /* Color de fondo para el botón */
+    color: white; /* Color de texto para el botón */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn_eliminar:hover {
+    background-color: #ff1a1a; /* Cambia el color al pasar el cursor */
+}
+
+#prize-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#prize-list li {
+    line-height: 1.4;
+    display: flex;
+    justify-content: space-between; /* Esto coloca el texto y el botón en los extremos */
+    align-items: center;
+    padding: 5px 0; /* Añade espacio alrededor de cada premio */
+    background-color: #6b21a8;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.95em;
+}
+
+#prize-list .icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+#prize-list li:nth-child(odd) {
+    background-color: #5b1a8a;
+}
+
 
 
 .draw-winner {
@@ -91,12 +132,54 @@ section {
 }
 
 /* Text input styling */
-#participant-name {
+#participant-name, #prize-name {
     width: 50%;
     padding: 10px;
     font-size: 1.1em;
     border-radius: 5px;
 }
+
+
+
+#winners-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre elementos */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    list-style-type: none;
+}
+
+#winners-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #4f46e5; /* Fondo de cada tarjeta */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+#winners-list .winner-name {
+    font-weight: bold;
+    color: #ffdd57; /* Color destacado para el nombre del ganador */
+}
+
+#winners-list .prize-name {
+    font-style: italic;
+    color: #a7f3d0; /* Color sutil para el nombre del premio */
+}
+
+/* Alternar colores para hacer la lista más atractiva */
+#winners-list li:nth-child(odd) {
+    background-color: #3b82f6; /* Fondo diferente para elementos impares */
+}
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -106,5 +189,9 @@ section {
 
     form input, form button, #participant-name {
         width: 100%;
+    }
+
+    #prize-list {
+        grid-template-columns: 1fr; /* Cambia a una columna en pantallas pequeñas */
     }
 }

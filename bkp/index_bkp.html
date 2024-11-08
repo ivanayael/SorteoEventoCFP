@@ -21,11 +21,9 @@
     <section id="draw">
         <h2>¡¡¡Sorteo de Evento!!!</h2>
         <input type="text" id="participant-name" placeholder="Agrega el nombre del invitado">
-        <button class="btn" onclick="addParticipant()">Agregar un participante</button> 
-
-         <!-- Botón para borrar lista de participantes -->
-         <button class="btn" onclick="clearParticipants()">Borrar Lista de Participantes</button>
-
+        <button class="btn" onclick="addParticipant()">Agregar un participante</button>
+        <!-- Botón para borrar lista de participantes -->
+        <button class="btn" onclick="clearParticipants()">Borrar Lista de Participantes</button>
         
         <!-- Input para importar desde Excel - Descontinuada -->
         <!-- <input type="file" id="import-excel" accept=".xlsx" onchange="importParticipantsFromExcel(event)"> -->
@@ -91,36 +89,32 @@
                 <li>Ale <button class="btn btn_eliminar" onclick="removeParticipant(28)">Borrar</button></li>
         </ul>
         
-       
+      
+
         <!-- Cargar premios -->
         <h3>Premios:</h3>
         <input type="text" id="prize-name" placeholder="Agregar un premio">
         <button class="btn" onclick="addPrize()">Agregar Premio</button>
         <ul id="prize-list">
-            <li><span class="icon">✉️</span> Gift Card: Che! Diseño Grafico - @Che.Diseño - Publicación para Feed</li>
-            <li><span class="icon">✉️</span> Gift Card: Clinica y Sagrada - @Che.Diseño - Premio Válido Por Una Sesión 1:1 sobre el ciclo: A Sesión Introductoria para Mujeres</li>
-            <li><span class="icon">✉️</span> Gift Card: MC Regalos - @MGRegalor - Premio Un Desayuno: Opción Clásica u Opción Saludable</li>
-            <li><span class="icon">✉️</span> Gift Card: Feria Circular - @Feriacircular2 - Premio Válido por 15000 pesos para la compra de indumentaria vintage</li>
-            <li><span class="icon">✉️</span> Gift Card: Fotógrafo y Filmmaker - @Martinsc_filmyfoto - Premio Sesión de Fotos profesional de 2 horas</li>
-            <li><span class="icon">✉️</span> Gift Card: Pedra Shop - @Pedra.Shop - Premio: Indumentaria</li>
-            <li><span class="icon">✉️</span> Gift Card: Ruda - @Ruda.Crea - Premio: Accesorio</li>
-            <li><span class="icon">✉️</span> Gift Card: Libra Nails Estudio - @StudioLibraOK - Premio: Esmaltado</li>
+            <li><span class="icon">🎁</span> Gift Card: Che! Diseño Grafico - @Che.Diseño - Publicación para Feed</li>
+            <li><span class="icon">🎁</span> Gift Card: Clinica y Sagrada - @Che.Diseño - Premio Válido Por Una Sesión 1:1 sobre el ciclo: A Sesión Introductoria para Mujeres</li>
+            <li><span class="icon">🎁</span> Gift Card: MC Regalos - @MGRegalor - Premio Un Desayuno: Opción Clásica u Opción Saludable</li>
+            <li><span class="icon">🎁</span> Gift Card: Feria Circular - @Feriacircular2 - Premio Válido por 15000 pesos para la compra de indumentaria vintage</li>
+            <li><span class="icon">🎁</span> Gift Card: Fotógrafo y Filmmaker - @Martinsc_filmyfoto - Premio Sesión de Fotos profesional de 2 horas</li>
+            <li><span class="icon">🎁</span> Gift Card: Pedra Shop - @Pedra.Shop</li>
+            <li><span class="icon">🎁</span> Gift Card: Ruda - @Ruda.Crea</li>
+            <li><span class="icon">🎁</span> Gift Card: Libra Nails Estudio - @StudioLibraOK</li>
         </ul>
         
 
-        <!-- Botón para borrar premios -->
-        <button class="btn" onclick="deletePrizes()">Borrar todos los premios</button>
-
-         <!-- Botón para resetear premios -->
-        <!-- <button class="btn" onclick="resetPrizes()">Reiniciar Sorteo de Premios</button> -->
-
-         <button class="btn" id="reset-draw">Reiniciar Sorteo de Premios</button>
+        <!-- Botón para resetear premios -->
+        <button class="btn" onclick="resetPrizes()">Resetear Premios</button>
 
         <!-- Botones de sorteo y siguiente premio -->
         <button class="btn" onclick="pickWinner()">Elegir un Ganador</button>
 
-        <!-- Botones de siguiente premio - Descontinuado -->
-       <!-- <button class="btn" onclick="nextPrize()">Siguiente Premio</button> -->
+         <!-- Botones de siguiente premio - descontinuado -->
+        <!-- <button class="btn" onclick="nextPrize()">Siguiente Premio</button> -->
         
         <!-- Mensaje de ganador -->
         <p class="draw-winner" id="winner"></p>
